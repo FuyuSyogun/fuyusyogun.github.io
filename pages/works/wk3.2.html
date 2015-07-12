@@ -1,10 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>日志1-主页个人: 个人主页的李南星</title>
+	<title>作业3.4-模态窗口-主页个人: 个人主页的李南星</title>
 	<link rel="stylesheet"; href="../../style/style.css"; type="text/css"/>
 </head>
-<body align="center"; class="body";>
+<div id="modal"; style="width:350px; height:250px; border:2px solid #ccc; position:absolute; display:block; z-index:9999; background:#fff; text-align:left;";>
+	<h1 style = "text-indent:2em">Alert!</h1>
+	<p id = "modalContent"; style = "text-indent:2em">Alert!</p>
+	<div style="height: 70px"></div>
+	<button style= "position:relative; left: 200px; width: 100px"; onclick="myClickFunc()">确认</button>
+</div>
+<div id="block"; style="position: absolute; z-index:9998; background:#fff; display:block; left: 0px; top: 0px";>
+</div>
+<script type="text/javascript"; src = "../../scripts/modal.js"></script>
+<body onKeyDown="myKeyFunc(event)"; align="center"; class="body";>
 	<div class="header";>
 		<div style="height:30px";></div>
 		<h1 id="title";>主页个人</h1>
@@ -28,23 +37,19 @@
 		<hr/>
 
 		<div id="text";>
-			<h3 id="title";>日志1</h3>
-			<p>这是日志No.1<span style="float:right">2015.7.7</span></p>
+			<h3 id="title";>作业3.4-模态窗口</h3>
+			<p>模态窗口<span style="float:right">2015.7.12</span></p>
 			<hr/>
 			<div id="maintext">
-				<p>小学期的前半部分内容，是Web前端。由于之前没有接触过相应内容，因此感到心虚。</p>
-				<p>Web前端是网站的重要部分，负责向用户展示的几乎全部内容。可以说用户体验很大程度上决定于前端的效果，因此很必要学好。</p>
-				<p>于是这个个人主页是人生第一篇HTML代码(可以这么说吗？)，很自豪。</p>
-				<p>网页是黑白配上蓝灰色的网页显得非常严谨、简约。同时，我很自觉地忽视了各种提高要求……</p>
-				<p>虽热个人对设计较为满意，但整体还显简陋、粗糙。希望经过之后的学习能够有所改善。</p>
+				<p>这个页面用于展示模态窗口。</p>
 				<p style="float:right">李南星</p>
 			</div>
 			<div style="height:50px";></div>
 		</div>
 		<hr/>
 		<div id="text";>
-			<p>这是第一篇日志</p>
-			<p>这是最后一篇日志</p>
+			<p>上一篇作业：<a href="wk3.html">作业3.3-回顶控件</a></p>
+			<p>这是最后一篇作业展示页面</p>
 		</div>
 		<hr/>
 		<div id="text";>
