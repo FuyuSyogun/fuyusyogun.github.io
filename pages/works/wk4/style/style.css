@@ -1,0 +1,4 @@
+.pic-column {padding: 0; float: left; width: 23.75%; margin-right: 0.5%; margin-left: 0.5%;}
+.pic-item {text-indent:0em; position: relative; margin-bottom: 10%; padding: 0.5%; line-height: 10px; display: block; background-color: #fff}
+.pic-item img {width: 100%;}
+.desc {font-size: 10px; margin-left: 10px; text-indent:2em; margin-right: 40px;}

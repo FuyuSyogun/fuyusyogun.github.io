@@ -1,4 +1,8 @@
 <style type="text/css";>
+	a:link {color: #808080; text-decoration:none;}
+	a:visited {color: #808080; text-decoration:none;}
+	a:hover {color: #C0C0C0; text-decoration:none;}
+	a:active {color: #C0C0C0; text-decoration:none;}
 	.header{background-color: #C0C0C0;}
 	.menu{background-color: #A0A0C0;}
 	.body{background-color: #EEEEEE;}
