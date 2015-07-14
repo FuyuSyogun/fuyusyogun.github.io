@@ -11,6 +11,8 @@ var piclist = new Array();
 		}
 	AddLi("ul1");
 	AdjustUl();
+	AddLi("ul1");
+	AdjustUl();
 	});
 })();
 
@@ -18,10 +20,14 @@ function AddLi(elemName) {
 	var picId = (++picLoaded) % 4;
 	var mySrc = piclist[picId].src;
 	var myDescription = piclist[picId].description;
-	document.getElementById(elemName).innerHTML += ('<li class="pic-item" id=pic' + picLoaded + '><img src="images/mini' + mySrc + '"><div class="info"><div class="tool"></div><p class="desc">' + myDescription + '</p></div></li>');
-	var thisPic = $("#pic" + picLoaded);
-	thisPic.hide();
-	thisPic.fadeIn({fail: function(){alert("fuck!");this.show();}});
+	var newNode = document.createElement('li');
+	newNode.setAttribute("class", "pic-item");
+	newNode.setAttribute("id", "pic" + picLoaded);
+	newNode.innerHTML = '<img src="images/mini' + mySrc + '"><div class="info"><div class="tool"></div><p class="desc">' + myDescription + '</p></div>';
+	$("#" + elemName).append(newNode);
+	$(newNode).hide();
+	$(newNode).fadeIn();
+	$(newNode).hover(function(){$(newNode).animate({'opacity': 0.5}, 100);}, function(){$(newNode).animate({'opacity': 1}, 100);});
 }
 
 function AdjustUl() {
@@ -44,7 +50,7 @@ window.onscroll = function () {
 	var scrollT = document.documentElement.scrollTop||document.body.scrollTop;
 	var scrollH = document.documentElement.scrollHeight||document.body.scrollHeight;
 	var clientH = document.documentElement.clientHeight||document.body.clientHeight;
-	if (scrollT >= scrollH - clientH - 300) {
+	if (scrollT >= scrollH - clientH - 500) {
 		AddLi("ul1");
 		AdjustUl();
 	}
