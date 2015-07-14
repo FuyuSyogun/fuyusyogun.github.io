@@ -10,10 +10,6 @@ var piclist = new Array();
 			};
 		}
 	AddLi("ul1");
-	AddLi("ul1");
-	AddLi("ul1");
-	AddLi("ul1");
-	AddLi("ul1");
 	AdjustUl();
 	});
 })();
@@ -23,8 +19,9 @@ function AddLi(elemName) {
 	var mySrc = piclist[picId].src;
 	var myDescription = piclist[picId].description;
 	document.getElementById(elemName).innerHTML += ('<li class="pic-item" id=pic' + picLoaded + '><img src="images/mini' + mySrc + '"><div class="info"><div class="tool"></div><p class="desc">' + myDescription + '</p></div></li>');
-	$("#pic"+picLoaded).animate({opacity: 0}, 0);
-	$("#pic"+picLoaded).animate({opacity: 1}, 50);
+	var thisPic = $("#pic" + picLoaded);
+	thisPic.hide();
+	thisPic.fadeIn({fail: function(){alert("fuck!");this.show();}});
 }
 
 function AdjustUl() {
@@ -36,17 +33,18 @@ function AdjustUl() {
 		}
 	}
 	for (i = 0; i < 4; ++i) {
-		while (ulelem[i].clientHeight < mostHeight - 300) {
+		while (ulelem[i].clientHeight < mostHeight) {
 			AddLi("ul" + (i + 1));
 		}
 	}
+	document.getElementById("maintext").style.height = mostHeight + 250 + "px";
 }
 
 window.onscroll = function () {
 	var scrollT = document.documentElement.scrollTop||document.body.scrollTop;
 	var scrollH = document.documentElement.scrollHeight||document.body.scrollHeight;
 	var clientH = document.documentElement.clientHeight||document.body.clientHeight;
-	if (scrollT >= scrollH - clientH - 1000) {
+	if (scrollT >= scrollH - clientH - 300) {
 		AddLi("ul1");
 		AdjustUl();
 	}

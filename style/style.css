@@ -11,7 +11,7 @@
 	#title{margin-left: 150px; margin-right: 150px; text-align: left;}
 	#subtitle{margin-left: 200px; margin-right: 200px; text-align: left;}
 	#directory{margin-left: 150px; margin-right: 150px; text-align: left;}
-	#text{margin-left:100px; margin-right: 100px; text-align: left;}
+	.text{margin-left:100px; margin-right: 100px; text-align: left;}
 	#maintext{text-indent:2em}
 	#endnotetext{text-align: right;}
 	html{font-family: "Microsoft YaHei"; margin: 0 auto; width:1060px; background-color: #303030;}
