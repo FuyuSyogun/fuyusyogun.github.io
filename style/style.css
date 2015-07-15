@@ -1,16 +1,16 @@
-	a:link {color: #303030; text-decoration:none;}
-	a:visited {color: #101010; text-decoration:none;}
-	a:hover {color: #E0E0E0; text-decoration:none;}
-	a:active {color: #E0E0E0; text-decoration:none;}
-	.header{background-color: #C0C0C0;}
-	.menu{background-color: #A0A0C0;}
-	.body{background-color: #EEEEEE;}
-	.endnote{background-color: #808080;}
-	.main{margin-left: 50px; margin-right: 50px;}
-	#title{margin-left: 150px; margin-right: 150px; text-align: left;}
-	#subtitle{margin-left: 200px; margin-right: 200px; text-align: left;}
-	#directory{margin-left: 150px; margin-right: 150px; text-align: left;}
-	.text{margin-left:100px; margin-right: 100px; text-align: left;}
-	#maintext{text-indent:2em}
-	#endnotetext{text-align: right;}
-	html{font-family: "Microsoft YaHei"; margin: 0 auto; width:1060px; background-color: #303030;}
+a:link {color: #303030; text-decoration:none;}
+a:visited {color: #101010; text-decoration:none;}
+a:hover {color: #E0E0E0; text-decoration:none;}
+a:active {color: #E0E0E0; text-decoration:none;}
+.header{background-color: #C0C0C0;}
+.menu{background-color: #A0A0C0;}
+.body{background-color: #EEEEEE;}
+.endnote{background-color: #808080;}
+.main{margin-left: 50px; margin-right: 50px;}
+#title{margin-left: 150px; margin-right: 150px; text-align: left;}
+#subtitle{margin-left: 200px; margin-right: 200px; text-align: left;}
+#directory{margin-left: 150px; margin-right: 150px; text-align: left;}
+.text{margin-left:100px; margin-right: 100px; text-align: left;}
+#maintext{text-indent:2em}
+#endnotetext{text-align: right;}
+html{font-family: "Microsoft YaHei"; margin: 0 auto; width:1060px; background-color: #303030;}
