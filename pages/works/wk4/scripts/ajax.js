@@ -76,9 +76,6 @@ block.style.opacity = 0.5;
 var modal = document.getElementById("modal");
 modal.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
 modal.style.top = ((document.documentElement.clientHeight - 500) / 2) + "px";
-var modalBlock = document.getElementById("modalBlock");
-modalBlock.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
-modalBlock.style.top = ((document.documentElement.clientHeight - 500) / 2) + "px";
 var body = document.getElementById("bodyM");
 var detailpic = document.getElementById("detailpic");
 
@@ -86,9 +83,6 @@ function disappear(){
 	modal.style.left = 0;
 	modal.style.opacity = 0;
 	block.style.opacity = 0;
-	modalBlock.style.opacity = 0;
-	modalBlock.style.width = 0;
-	modalBlock.style.left = 0;
 	block.style.width = 0;
 	modal.style.width = 0;
 	picOn = false;
@@ -151,15 +145,12 @@ function getGreatCircleDistance(lat1,lng1,lat2,lng2){
 
 function displayPic(picId){
 	modal.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
-	modalBlock.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
 	currentPicId = picId;
 	picOn = true;
 	modal.style.opacity = 1;
-	modalBlock.style.opacity = 1;
 	block.style.opacity = 0.5;
 	block.style.width = document.documentElement.clientWidth + "px";
 	modal.style.width = 300 + "px";
-	modalBlock.style.width = 300 + "px";
 	body.style.filter = "blur(2px)";
 	body.setAttribute("class", "blur");
 	detailpic.innerHTML = '<a href="#"; onClick = "disappear(); return false;"><img src="images/' + piclist[picId].src + '"; style = "width:95%"; id = "detailPicture"/></a><div><p class="descrip">' + piclist[picId].description + '</p></div>';
@@ -198,8 +189,6 @@ function displayPic(picId){
 			nomorecomments.innerHTML = "";
 			morecomments.innerHTML = "加载更多评论";
 		}
-
-		modalBlock.style.height = $(modal).height() + "px";
 	});
 
 };
@@ -210,8 +199,6 @@ window.onresize = function(){
 		block.style.height = document.documentElement.clientHeight + "px";
 		modal.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
 		modal.style.top = ((document.documentElement.clientHeight - 500) / 2) + "px";
-		modalBlock.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
-		modalBlock.style.top = ((document.documentElement.clientHeight - 500) / 2) + "px";
 	}
 }
 
@@ -224,7 +211,6 @@ function addComment(){
 				$(comments).append(newcomment);
 			}
 		}
-		modalBlock.style.height = $(modal).height() + "px";
 		nomorecomments.innerHTML = "无更多评论";
 		morecomments.innerHTML = "";
 	});
