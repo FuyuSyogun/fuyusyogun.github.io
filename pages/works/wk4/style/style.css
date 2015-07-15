@@ -2,3 +2,4 @@
 .pic-item {text-indent:0em; position: relative; margin-bottom: 10%; padding: 0.5%; line-height: 10px; display: block; background-color: #eee;}
 .pic-item img {width: 100%;}
 .descrip {font-size: 10px; margin-left: 10px; text-indent:2em; margin-right: 40px;}
+.blur{-webkit-filter: blur(2px);}

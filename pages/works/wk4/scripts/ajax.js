@@ -80,7 +80,6 @@ var modalBlock = document.getElementById("modalBlock");
 modalBlock.style.left = ((document.documentElement.clientWidth - 300) / 2) + "px";
 modalBlock.style.top = ((document.documentElement.clientHeight - 500) / 2) + "px";
 var body = document.getElementById("bodyM");
-
 var detailpic = document.getElementById("detailpic");
 
 function disappear(){
@@ -95,6 +94,7 @@ function disappear(){
 	picOn = false;
 	currentPicId = 0;
 	body.style.filter = "";
+	body.setAttribute("class", "");
 };
 
 (function getLocation(){
@@ -161,6 +161,7 @@ function displayPic(picId){
 	modal.style.width = 300 + "px";
 	modalBlock.style.width = 300 + "px";
 	body.style.filter = "blur(2px)";
+	body.setAttribute("class", "blur");
 	detailpic.innerHTML = '<a href="#"; onClick = "disappear(); return false;"><img src="images/' + piclist[picId].src + '"; style = "width:95%"; id = "detailPicture"/></a><div><p class="descrip">' + piclist[picId].description + '</p></div>';
 	var comments = document.getElementById("comments");
 	var nomorecomments = document.getElementById("nomorecomments");
