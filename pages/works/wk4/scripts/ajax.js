@@ -5,6 +5,7 @@ var picNumber = 20;
 var currentPicId = 0;
 var supportPosition = true;
 var currentPosition = {x: 0, y: 0};
+var positionAllowed = false;
 
 $.ajaxSetup({error: function (x, e){
 	alert(e);
@@ -104,21 +105,23 @@ function disappear(){
 function position(position){
 	currentPosition.x = position.coords.latitude;
 	currentPosition.y = position.coords.longitude;
+	positionAllowed = true;
 }
 
 function error(error){
+	positionAllowed = false;
 	switch(error.code) {
 		case error.PERMISSION_DENIED:
-		console.log("PERMISSION_DENIED");
+		alert("PERMISSION_DENIED");
 		break;
 		case error.POSITION_UNAVAILABLE:
-		console.log("POSITION_UNAVAILABLE");
+		alert("POSITION_UNAVAILABLE");
 		break;
 		case error.TIMEOUT:
-		console.log("TIMEOUT");
+		alert("TIMEOUT");
 		break;
 		case error.UNKNOWN_ERROR:
-		console.log("UNKNOWN_ERROR");
+		alert("UNKNOWN_ERROR");
 		break;
 	}
 }
@@ -168,7 +171,12 @@ function displayPic(picId){
 	$.getJSON("jsons/comments.json", function(json){
 		picx = json.piccomments[picId].x;
 		picy = json.piccomments[picId].y;
-		distance.innerHTML = "据您 " + getGreatCircleDistance(picx, picy, currentPosition.x, currentPosition.y).toFixed(0) + "km";
+		if(positionAllowed){
+			distance.innerHTML = "据您 " + getGreatCircleDistance(picx, picy, currentPosition.x, currentPosition.y).toFixed(0) + "km";
+		}
+		else{
+			distance.innerHTML = "地理信息未准备";
+		}
 		if(json.piccomments[picId].comments.length == 0){
 			nomorecomments.innerHTML = "无评论";
 		}
