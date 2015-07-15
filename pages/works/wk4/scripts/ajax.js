@@ -41,18 +41,18 @@ function addEle(liName) {
 	$("#" + liName).append(newNode);
 	$(newNode).hide();
 	$(newNode).fadeIn();
-	$(newNode).hover(function(){$(newNode).animate({'opacity': 0.5}, 100);}, function(){$(newNode).animate({'opacity': 1}, 100);});
+//	$(newNode).hover(function(){$(newNode).animate({'opacity': 0.5}, 100);}, function(){$(newNode).animate({'opacity': 1}, 100);});
 }
 
 function reUl() {
 	var uls = new Array(), heightMax = 0;
-	for (i = 0; i < 4; ++i) {
+	for (i = 0; i < 4; i++) {
 		uls[i] = document.getElementById(("ul") + (i + 1));
 		if (uls[i].clientHeight > heightMax) {
 			heightMax = uls[i].clientHeight;
 		}
 	}
-	for (i = 0; i < 4; ++i) {
+	for (i = 0; i < 4; i++) {
 		while (uls[i].clientHeight < heightMax) {
 			addEle("ul" + (i + 1));
 		}
@@ -163,7 +163,7 @@ function displayPic(picId){
 	var distance = document.getElementById("distance");
 	var detailPicture = document.getElementById("detailPicture");
 	var picx, picy;
-	$(detailPicture).hover(function(){$(detailPicture).animate({'opacity': 0.5}, 100);}, function(){$(detailPicture).animate({'opacity': 1}, 100);});
+//	$(detailPicture).hover(function(){$(detailPicture).animate({'opacity': 0.5}, 100);}, function(){$(detailPicture).animate({'opacity': 1}, 100);});
 	comments.innerHTML = "";
 	distance.innerHTML = "";
 	nomorecomments.innerHTML = "无法加载评论";
@@ -172,7 +172,7 @@ function displayPic(picId){
 		picx = json.piccomments[picId].x;
 		picy = json.piccomments[picId].y;
 		if(positionAllowed){
-			distance.innerHTML = "据您 " + getGreatCircleDistance(picx, picy, currentPosition.x, currentPosition.y).toFixed(0) + "km";
+			distance.innerHTML = "距您 " + getGreatCircleDistance(picx, picy, currentPosition.x, currentPosition.y).toFixed(0) + "km";
 		}
 		else{
 			distance.innerHTML = "地理信息未准备";

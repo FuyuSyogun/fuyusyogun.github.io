@@ -1,5 +1,8 @@
 .pic-column {padding: 0; float: left; width: 24%; margin-right: 0.5%; margin-left: 0.5%;}
-.pic-item {text-indent:0em; position: relative; margin-bottom: 10%; padding: 0.5%; line-height: 10px; display: block; background-color: #eee;}
+.pic-item {text-indent:0em; position: relative; margin-bottom: 10%; padding: 0.5%; line-height: 10px; display: block; background-color: #eee; transition: opacity 0.1s; -moz-transition: opacity 0.1s; -webkit-transition: opacity 0.1s; -o-transition: opacity 0.1s;}
+.pic-item:hover {opacity: 0.5;}
 .pic-item img {width: 100%;}
 .descrip {font-size: 10px; margin-left: 10px; text-indent:2em; margin-right: 40px;}
 .blur{-webkit-filter: blur(2px);}
+#detailpic {transition: opacity 0.1s; -moz-transition: opacity 0.1s; -webkit-transition: opacity 0.1s; -o-transition: opacity 0.1s;}
+#detailpic:hover {opacity: 0.5;}
