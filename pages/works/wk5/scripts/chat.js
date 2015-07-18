@@ -107,6 +107,8 @@ refMessages.limitToLast(20).on('child_added', function (snapshot) {
 refUsers.on('value', function (data) {
 	userList = data.val();
 	$("#userList").html("");
+	var listTitle = $("<li><b><br/>User online:</b></li>");
+	$("#userList").append(listTitle);
 	for(x in userList){
 		var nameElement = $("<li><span class='userName'></span></li>");
 		nameElement.text(userList[x].name);
