@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatroom</title>
+	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+	<script src="scripts/jquery-2.1.4.min.js"></script>
+	<script src="scripts/chat.js"></script>
+	<link rel="stylesheet"; href="style/style.css"; type="text/css"/>
+</head>
+<body>
+	<div class="page">
+		<div class="window" id="nickNameWindow">
+			<div class="inputSect">
+				<p>Login</p>
+				<input type="text" id="nickName" placeholder="Username" onkeydown="setName(event)"/>
+			</div>
+		</div>
+		<div class="block" id="block">
+		</div>
+		<div class="blurBody" id="body">
+			<h1 class="title">Chatroom</h1>
+			<h6 class="title">by Fuyu-Syogun</h6>
+			<duv class="window" id="chatRoom">
+				<ul class="textList" id="display"></ul>
+				<div class="userBox">
+					<ul class="textList" id="userList"></ul>
+				</div>
+				<div class="inputSect" id="inputChat">
+					<div class="inputTextSect">
+						<span id="userName"></span>
+						<input type="text" id="input" placeholder="Text" onkeydown="sendMessage(event)"/>
+					</div>
+					<div class="buttonSect">
+						<button class="button" id="rename" onmousedown="nickNameDisplay()" style="opacity: 0">Rename</button>
+						<button class="button" id="logOut" onmousedown="logOut()">Logout</button>
+					</div>
+				</div>
+			</duv>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+.title{
+	text-align: center;
+}
+.page{
+	font-family: "Microsoft YaHei";
+	text-shadow: 0.2px 0.3px 1px #000;
+	font-size: 12px;
+}
+.body{
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-image: -moz-linear-gradient(top, #eef, #fff);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eef), color-stop(1, #fff));
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#eef', endColorstr='#fff', GradientType='0');
+}
+.blurBody{
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-image: -moz-linear-gradient(top, #eef, #fff);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eef), color-stop(1, #fff));
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#eef', endColorstr='#fff', GradientType='0');
+}
+.window{
+	position: fixed;
+	display: block;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 5px;
+	background-image: -moz-linear-gradient(top, #ccc, #aac);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(1, #aac));
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ccc', endColorstr='#aac', GradientType='0');
+}
+.textList{
+	position: relative;
+	list-style: none;
+	float: left;
+	display: block;
+	margin: 20px;
+	margin-top: 20px;
+	padding-left: 10px;
+	padding-right: 30px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 5px;
+	box-shadow: 2px 3px 5px 0.3px #337 inset;
+	background-image: -moz-linear-gradient(top, #eef, #fff);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eef), color-stop(1, #fff));
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#eef', endColorstr='#fff', GradientType='0');
+}
+.inputSect{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.inputTextSect{
+	display: block;
+	width: 500px;
+}
+.buttonSect{
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.button{
+	margin-left: 25px;
+	font-family: "Microsoft YaHei";
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 12px;
+	text-shadow: 0.2px 0.3px 1px #77a;
+}
+.userName{
+	margin-top: 20px;
+	font-weight: bold;
+	margin-right: 10px;
+	width: 50px;
+	display: block;
+}
+.chatText{
+	text-indent: 1em;
+	margin-left: 20px;
+}
+
+#nickNameWindow{
+	text-align: center;
+	left: 50%;
+	margin-left: -125px;
+	width: 250px;
+	height: 80px;
+	margin-top: 15%;
+	z-index: 5;
+	box-shadow: 2px 3px 10px #337;
+}
+#block{
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	opacity: 0.5;
+	background-color: #fff;
+}
+#chatRoom{
+	left: 50%;
+	margin-left: -275px;
+	width: 550px;
+	height: 720px;
+	z-index: 1;
+	box-shadow: 2px 3px 20px #337;
+}
+#display{
+	width: 300px;
+	height: 600px;
+	overflow: auto;
+}
+#userList{
+	width: 80px;
+	height: 600px;
+}
+#input{
+	float: right;
+	width: 370px;
+}
