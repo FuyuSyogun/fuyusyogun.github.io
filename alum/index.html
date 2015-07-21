@@ -212,7 +212,11 @@ function hitEffect(hitFlag,hitTimes){
 	if(hitFlag == true)
 	{
 		hit.attr("class","hitNeon");
-		hit.html(hitTimes+"hit");
+		if(hitTimes == 1){
+			hit.html(hitTimes+" hit");
+		}else{
+			hit.html(hitTime+" hits");
+		}
 	}
 	else
 	{

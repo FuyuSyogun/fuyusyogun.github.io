@@ -59,20 +59,24 @@
 	-o-animation:fadeInOut 3s infinite linear;	/* Opera */
 }
 .hitNeon{
+	left: 540px;
+	top: 200px;
 	text-height:font-size;
-	text-align:left;
+	text-align:center;
 	font-size:60px;
-	width:auto;
+	width:200px;
 	height:auto;
 	position:fixed;
 	z-index :4000;
 	text-shadow: 0 0 10px #fff;
 }
 .missNeon{
+	left: 540px;
+	top: 200px;
 	text-height:font-size;
-	text-align:left;
+	text-align:center;
 	font-size:60px;
-	width:auto;
+	width:200px;
 	height:auto;
 	position:fixed;
 	z-index :4000;
