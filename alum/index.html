@@ -42,7 +42,23 @@
 		background.src = "images/ground/Background1.png";
 		noteImg.src = "images/note.png";
 		supNoteImg.src = "images/noteSuper.png";
+
+		var missEffect = new Array();
+var missImg = new Array();
 		(function(){
+			for(var i = 1; i <9 ;i++)
+			{
+	//console.log("fuck" + i);
+	missImg[i] = document.createElement("img");
+	missImg[i].src = "images/miss/miss000" + i +".png";
+	missImg[0] = null 
+}
+for(i = 1; i < 7; i++){
+	missEffect[i] = 0;
+}	
+})();
+
+	(function(){
 			for(var i = 1; i <10 ;i++)
 			{
 	//console.log("fuck" + i);
@@ -87,6 +103,16 @@ function refreshCanvas(){
 			}
 		}
 	}
+	for(x = 1; x < 7; x++){
+		if(missEffect[x] != 0){
+			console.log(missEffect);
+			context.drawImage(missImg[missEffect[x]], x * 70 - 303.5, + 170);
+			missEffect[x]++;
+			if(missEffect[x] > 8){
+				missEffect[x] = 0;
+			}
+		}
+	}
 	setTimeout(function(){refreshCanvas()}, 20);
 }
 function fall(noteZone){
@@ -95,7 +121,6 @@ function fall(noteZone){
 		ifSupNote = false;
 	}else{
 	notes.push({"type": 0, "x": noteZone * 70 - 60, "y": -251});
-	console.log("pushhihihi");
 }
 } 
 
@@ -144,7 +169,7 @@ function startPlay(noteList, bar){
 	for(x in noteList.bars[bar].notes){
 		setTimeout("fall(" + noteList.bars[bar].notes[x].note + ")", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 500 + offset - 180);
 		setTimeout("noteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 100);
-		setTimeout("if(noteValid[" + noteList.bars[bar].notes[x].note + "]== true){noteValid[" + noteList.bars[bar].notes[x].note + "] = false; miss();}", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 100);
+		setTimeout("if(noteValid[" + noteList.bars[bar].notes[x].note + "]== true){noteValid[" + noteList.bars[bar].notes[x].note + "] = false; miss(" + noteList.bars[bar].notes[x].note + ");}", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 100);
 		if(ifSupNote == true){
 			setTimeout("superNoteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 100);
 			setTimeout("superNoteValid[" + noteList.bars[bar].notes[x].note + "] = false", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 100);
@@ -176,9 +201,9 @@ function explode(x){
 	explodeEffect[x] = 1;
 }
 
-function miss(){
+function miss(x){
 	//console.log("missed!sb");
-
+	missEffect[x] = 1;
 	hitEffect(false,0);
 	combo = 0;
 	multiplier = 1;
@@ -190,7 +215,7 @@ document.onkeydown = function(e){
 			explode(1);
 		}
 		else{
-			miss();
+			miss(1);
 		}
 	}
 	if(e.keyCode == 68){
@@ -198,7 +223,7 @@ document.onkeydown = function(e){
 			explode(2);
 		}
 		else{
-			miss();
+			miss(2);
 		}
 	}
 	if(e.keyCode == 70){
@@ -206,7 +231,7 @@ document.onkeydown = function(e){
 			explode(3);
 		}
 		else{
-			miss();
+			miss(3);
 		}
 	}
 	if(e.keyCode == 74){
@@ -214,7 +239,7 @@ document.onkeydown = function(e){
 			explode(4);
 		}
 		else{
-			miss();
+			miss(4);
 		}
 	}
 	if(e.keyCode == 75){
@@ -222,7 +247,7 @@ document.onkeydown = function(e){
 			explode(5);
 		}
 		else{
-			miss();
+			miss(5);
 		}
 	}
 	if(e.keyCode == 76){
@@ -230,7 +255,7 @@ document.onkeydown = function(e){
 			explode(6);
 		}
 		else{
-			miss();
+			miss(6);
 		}
 	}
 }
