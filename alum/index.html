@@ -116,7 +116,7 @@ $("#begin").click(function(){
 		startTime = dateElem.getTime();
 		startPlay(noteList, 0);
 		refreshCanvas();
-		setTimeout(function(){audio.play();}, 550);
+		setTimeout(function(){audio.play();}, 575);
 	}
 	if(jsonReady == false)
 	{
@@ -139,7 +139,7 @@ function startPlay(noteList, bar){
 	}
 	var dateElem = new Date();
 	currentTime = dateElem.getTime();
-	offset = currentTime - startTime - (audio.currentTime * 1000) - 550;
+	offset = currentTime - startTime - (audio.currentTime * 1000) - 575;
 	console.log("offset:" + offset);
 	for(x in noteList.bars[bar].notes){
 		setTimeout("fall(" + noteList.bars[bar].notes[x].note + ")", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 500 + offset - 180);
@@ -167,7 +167,7 @@ function explode(x){
 		multiplier *= 2;
 	}
 	score += multiplier * 50;
-	if(combo%50 == 0){
+	if(combo%13 == 0){
 		ifSupNote = true;
 	}
 	hitEffect(true,combo);
