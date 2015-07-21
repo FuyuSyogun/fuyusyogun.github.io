@@ -24,7 +24,9 @@
 	50% {opacity: 1;}
 	100%{opacity: 0;}
 }
-
+body{
+	font-family: "Microsoft YaHei";
+}
 #playLine{
 	position: fixed;
 	top: 200px;
