@@ -127,9 +127,9 @@ function startPlay(noteList, bar){
 	offset = currentTime - startTime - (audio.currentTime * 1000) - 500;
 	console.log("offset:" + offset);
 	for(x in noteList.bars[bar].notes){
-		setTimeout("fall(" + noteList.bars[bar].notes[x].note + ")", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 500 + offset - 230);
-		setTimeout("noteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 150);
-		setTimeout("if(noteValid[" + noteList.bars[bar].notes[x].note + "]== true){noteValid[" + noteList.bars[bar].notes[x].note + "] = false; miss();}", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 150);
+		setTimeout("fall(" + noteList.bars[bar].notes[x].note + ")", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 500 + offset - 130);
+		setTimeout("noteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 50);
+		setTimeout("if(noteValid[" + noteList.bars[bar].notes[x].note + "]== true){noteValid[" + noteList.bars[bar].notes[x].note + "] = false; miss();}", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 50);
 	}
 	if(bar % 3 == 0){
 		setTimeout(function(){startPlay(noteList, bar + 1);}, 2666);
@@ -212,11 +212,7 @@ function hitEffect(hitFlag,hitTimes){
 	if(hitFlag == true)
 	{
 		hit.attr("class","hitNeon");
-		if(hitTimes == 1){
-			hit.html(hitTimes+" hit");
-		}else{
-			hit.html(hitTime+" hits");
-		}
+		hit.html(hitTimes+"hit");
 	}
 	else
 	{
