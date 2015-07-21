@@ -25,11 +25,14 @@
 		var notes = new Array();
 		var currentNote = 0;
 		var noteImg = document.createElement("img");
+		var supNoteImg = document.createElement("img");
 		var background = document.createElement("img");
 		var foreground = document.createElement("img");
 		var canvas = document.createElement("canvas");
 		var explodeImg = new Array();
 		var explodeEffect = new Array();
+		var ifSupNote = false;
+		var superNoteValid = new Array(false, false, false, false, false, false, false);
 		canvas.id = "canvas";
 		var context = canvas.getContext("2d");
 		var hit = $("<div>");
@@ -38,6 +41,7 @@
 		foreground.src = "images/ground/Foreground1.png";
 		background.src = "images/ground/Background1.png";
 		noteImg.src = "images/note.png";
+		supNoteImg.src = "images/noteSuper.png";
 		(function(){
 			for(var i = 1; i <10 ;i++)
 			{
@@ -62,8 +66,13 @@ function refreshCanvas(){
 	context.clearRect(0,0,500,620);
 	for(x = currentNote; x < notes.length; x++){
 		if(notes[x].y <= 620){
-			context.drawImage(noteImg,notes[x].x,notes[x].y);
-			notes[x].y += 25;
+			if(notes[x].type == 0){
+				context.drawImage(noteImg,notes[x].x,notes[x].y);
+				notes[x].y += 25;
+			}else{
+				context.drawImage(supNoteImg,notes[x].x,notes[x].y);
+				notes[x].y += 25;
+			}
 		}
 		else{
 			currentNote = x;
@@ -81,7 +90,13 @@ function refreshCanvas(){
 	setTimeout(function(){refreshCanvas()}, 20);
 }
 function fall(noteZone){
-	notes.push({"x": noteZone * 70 - 60, "y": -251});
+	if(ifSupNote == true){
+		notes.push({"type": 1, "x": noteZone * 70 - 60, "y": -251});
+		ifSupNote = false;
+	}else{
+	notes.push({"type": 0, "x": noteZone * 70 - 60, "y": -251});
+	console.log("pushhihihi");
+}
 } 
 
 function init(){
@@ -124,12 +139,16 @@ function startPlay(noteList, bar){
 	}
 	var dateElem = new Date();
 	currentTime = dateElem.getTime();
-	offset = currentTime - startTime - (audio.currentTime * 1000) - 500;
+	offset = currentTime - startTime - (audio.currentTime * 1000) - 550;
 	console.log("offset:" + offset);
 	for(x in noteList.bars[bar].notes){
 		setTimeout("fall(" + noteList.bars[bar].notes[x].note + ")", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 500 + offset - 180);
 		setTimeout("noteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 100);
 		setTimeout("if(noteValid[" + noteList.bars[bar].notes[x].note + "]== true){noteValid[" + noteList.bars[bar].notes[x].note + "] = false; miss();}", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 100);
+		if(ifSupNote == true){
+			setTimeout("superNoteValid[" + noteList.bars[bar].notes[x].note + "] = true", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 - 100 + offset - 100);
+			setTimeout("superNoteValid[" + noteList.bars[bar].notes[x].note + "] = false", (noteList.bars[bar].notes[x].time) * 1000 * 2 / 3 + 100 + offset - 100);
+		}
 	}
 	if(bar % 3 == 0){
 		setTimeout(function(){startPlay(noteList, bar + 1);}, 2666);
@@ -141,9 +160,16 @@ function startPlay(noteList, bar){
 
 function explode(x){
 	combo++;
-	multiplier = Number(Number(combo / 10 + 1).toFixed(0));
-	score += multiplier;
-
+	if(combo%10 == 0){
+		multiplier++;
+	}
+	if(superNoteValid[x]){
+		multiplier *= 2;
+	}
+	score += multiplier * 50;
+	if(combo%50 == 0){
+		ifSupNote = true;
+	}
 	hitEffect(true,combo);
 	//console.log("combo: " + combo + "multiplier" + multiplier + "score" + score);
 	noteValid[x] = false;
@@ -212,12 +238,12 @@ function hitEffect(hitFlag,hitTimes){
 	if(hitFlag == true)
 	{
 		hit.attr("class","hitNeon");
-		hit.html(hitTimes + "!");
+		hit.html(hitTimes);
 	}
 	else
 	{
 		hit.attr("class","missNeon");
-		hit.html("miss");
+		hit.html("X");
 	}
 	hit.stop(true, true);
 	hit.show();
