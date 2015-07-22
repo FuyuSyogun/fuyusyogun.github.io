@@ -1,36 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
-@-webkit-keyframes fadeInOut
-{
-	0% {opacity: 0;}
-	50% {opacity: 1;}
-	100%{opacity: 0;}
-}
-@keyframes fadeInOut
-{
-	0% {opacity: 0;}
-	50% {opacity: 1;}
-	100%{opacity: 0;}
-}
-@-moz-keyframes fadeInOut
-{
-	0% {opacity: 0;}
-	50% {opacity: 1;}
-	100%{opacity: 0;}
-}
-@-o-keyframes fadeInOut
-{
-	0% {opacity: 0;}
-	50% {opacity: 1;}
-	100%{opacity: 0;}
-}
 body{
 	font-family: "Microsoft YaHei";
-}
-#playLine{
-	position: fixed;
-	top: 200px;
-	width: 600px;
 }
 .background{
 	top : 0;
@@ -51,16 +22,6 @@ body{
 	left:390px;
 	position : fixed;
 	z-index : 2000;
-}
-.background2{
-	top : 0;
-	left : 0;
-	position : fixed;
-	z-index : 1001;
-	animation:fadeInOut 3s infinite linear;
-	-moz-animation:fadeInOut 3s infinite linear;	/* Firefox */
-	-webkit-animation:fadeInOut 3s infinite linear;	/* Safari 和 Chrome */
-	-o-animation:fadeInOut 3s infinite linear;	/* Opera */
 }
 .hitNeon{
 	left: 540px;
@@ -95,7 +56,6 @@ body{
 	width:200px;
 	height: 100px;
 	font-size: 36px;
-	
 	line-height: 50px;
 	text-shadow: 0 0 10px #fff,
                  0 0 150px #8c8c8c;
@@ -115,6 +75,7 @@ hr{
                 0 0 150px #8c8c8c;
 }
 #begin{
+	font-family: "Microsoft YaHei";
 	font-weight: bolder;
 	font-size: 24px;
 	width:120px;
@@ -122,24 +83,20 @@ hr{
 	top:330px;
 	left:580px;
 	border: 5px solid #dedede;
-	
-	-moz-border-radius: 15px;      
-    -webkit-border-radius: 15px;   
-    border-radius:15px;            
+	-moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius:15px;
 	position: fixed;
 	z-index: 9999;
 	box-shadow: 0 0 10px #fff,
                 0 0 150px #8c8c8c;
 }
 .resultPage{
+	background-color: #fff;
 	text-align: center;
-	display: none;
 	font-weight: bold;
 	font-size: 24px;
 	border: 5px solid #dedede;
-	-moz-border-radius: 15px;      
-    -webkit-border-radius: 15px;   
-    border-radius:15px; 
 	width: 300px;
 	height: 300px;
 	left:490px;
@@ -150,15 +107,16 @@ hr{
                 0 0 150px #8c8c8c;
 }
 .restart{
+	font-family: "Microsoft YaHei";
 	cursor: pointer;
 	width:120px;
 	height: 50px;
 	font-size: 24px;
 	font-weight: bold;
 	border: 5px solid #dedede;
-	-moz-border-radius: 15px;      
-    -webkit-border-radius: 15px;   
+	-moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
     border-radius:15px;
     text-shadow: 0 0 10px #fff,
-                 0 0 150px #8c8c8c;            
+                 0 0 150px #8c8c8c;
 }
