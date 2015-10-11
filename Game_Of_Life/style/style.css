@@ -1,0 +1,41 @@
+body{
+	background-color: #EEEEEE;
+}
+.banner{
+	position:fixed;
+	z-index:99999;
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	background: rgba(42,88,255,0.8);
+	box-shadow:0 1px 1px rgba(34,25,25,0.1);
+	color:#FFFFFF;
+	font-size:36px;
+	font-family: "Arial";
+	font-style: bold;
+}
+.container{
+	width:100%;
+}
+.status{
+	width:40%;
+	right:5%;
+	top:100px;
+	position:absolute;
+}
+#myCanvas{
+	margin-top:60px;
+	margin-left:15%;
+}
+#right-container{
+	position:fixed;
+	right:10px;
+	top:180px;
+	width:40%;
+}
+.livecells{
+	font-size: 36px;
+	font-style: bold;
+	color:#FF0000;
+	left:10%;
+}
