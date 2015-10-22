@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>生命游戏2</title>
+	<link href="style/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="style/style.css" rel="stylesheet">
+</head>
+
+<body>	
+	<div class="banner">生命游戏2</div>
+	<div class="container">
+		<canvas id="myCanvas" height="700" width="700"></canvas>
+		<div id="right-container">
+			当前生存细胞数：
+			<div class="livecells">0</div>
+			宽度:
+			<input type="text" id="width" name="width" value="100" size="4"/>px (5 ~ 100, 整数)
+			<br />
+			高度:
+			<input type="text" id="height" name="height" value="100" size="4"/>px (5 ~ 100, 整数)
+			<br />
+			密度:
+			<input type="text" id="rate" name="rate" value="0.5" size="4"/> (0 ~ 1, 小数)
+			<br />
+			刷新:
+			<input type="text" id="refreshRate" name="refreshRate" value="10" size="4"/>fps (1 ~ 30, 整数)
+			<br />
+			<button class="btn btn-lg btn-primary" style="margin-left:2%"  onclick="generate(); redraw()">生成
+			</button>
+			<button class="btn btn-lg btn-success" style="margin-left:2%"  onclick="continueGrow()">启动
+			</button>
+			<button class="btn btn-lg btn-" style="margin-left:2%"  onclick="pauseGrow()">暂停
+			</button>
+			<button class="btn btn-lg btn-danger" style="margin-left:2%"  onclick="reset(); redraw()">重置
+			</button>
+		</div>
+	</div>
+	</div>
+</body>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/logic.js"></script>
+<script type="text/javascript" src="scripts/display.js"></script>
+</html>
